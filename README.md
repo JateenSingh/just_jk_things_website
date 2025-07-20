@@ -1,2 +1,2 @@
 # just_jk_things_website
-Website for my 3d printing company 
+Angular 19 Website for my new 3d printing company 
