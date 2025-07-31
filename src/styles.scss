@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background-light dark:bg-background-dark text-gray-900 dark:text-white transition-colors duration-300;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif;
+  @apply text-accent dark:text-white;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #ff6f61 0%, #ff8a80 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #3e4c59 0%, #546e7a 100%);
+}
+
+.gradient-highlight {
+  background: linear-gradient(135deg, #00bfa5 0%, #26c6da 100%);
+}
+
+/* Hero section styles */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 111, 97, 0.1) 0%,
+    rgba(0, 191, 165, 0.1) 100%
+  );
+}
+
+/* Card styles */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+}
+
+.card-hover {
+  @apply hover:scale-105 transition-transform duration-300;
+}
+
+/* Section padding */
+.section-padding {
+  @apply py-16 px-4 sm:px-6 lg:px-8;
+}
+
+/* Container max width */
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #ff6f61 0%, #00bfa5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300;
+}
+
+.form-textarea {
+  @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none transition-all duration-300;
+}
+
+/* Product card specific styles */
+.product-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+}
+
+.product-image {
+  @apply w-full h-48 object-cover transition-transform duration-300;
+}
+
+.product-card:hover .product-image {
+  @apply scale-105;
+}
+
+/* Trust indicators */
+.trust-logo {
+  @apply opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0;
+}
+
+/* Animation classes */
+.fade-in {
+  @apply animate-fade-in;
+}
+
+.slide-up {
+  @apply animate-slide-up;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  transition: all 0.3s ease;
+}

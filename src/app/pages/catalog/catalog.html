@@ -1,0 +1,81 @@
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- Hero Section -->
+  <section
+    class="relative py-16 bg-gradient-to-br from-highlight/10 to-primary/10"
+  >
+    <div class="container-custom">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl lg:text-6xl font-headline font-bold mb-6">
+          Product <span class="text-gradient">Catalog</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+          Discover our range of high-quality 3D printed products. From everyday
+          essentials to custom creations, we bring innovation to life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let product of allProducts" class="product-card">
+          <!-- Product Image -->
+          <div class="relative overflow-hidden rounded-t-lg">
+            <img
+              [src]="product.images[0]?.url || '/assets/images/placeholder-product.jpg'"
+              [alt]="product.images[0]?.alt || product.name"
+              class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div *ngIf="product.isCustomizable" class="absolute top-3 left-3">
+              <span
+                class="px-2 py-1 bg-highlight text-white text-xs font-semibold rounded-full"
+              >
+                Customizable
+              </span>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="p-6">
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              {{ product.name }}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              {{ product.shortDescription }}
+            </p>
+
+            <!-- Price and Actions -->
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900 dark:text-white">
+                {{ product.currency }}{{ product.price }}
+              </div>
+              <div class="flex space-x-2">
+                <a
+                  *ngIf="getMarketplaceUrl(product)"
+                  [href]="getMarketplaceUrl(product)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-sm px-4 py-2"
+                >
+                  Buy on {{ getMarketplaceName(product) }}
+                </a>
+                <a
+                  *ngIf="!getMarketplaceUrl(product)"
+                  href="mailto:info@justjkthings.co.za?subject=Quote Request for {{ product.name }}"
+                  class="btn-outline text-sm px-4 py-2"
+                >
+                  Get Quote
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
